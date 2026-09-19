@@ -4,6 +4,26 @@
 // de détail (project.html?slug=...) se génèrent automatiquement à partir de ça.
 const PROJECTS = [
     {
+        slug: "universal-mayhem",
+        title: "Universal Mayhem",
+        subtitle: "Composez votre deck et dominez des batailles automatisées sur les points de capture",
+        folder: "UniversalMayhem",
+        cover: "UniversalMayhem.png",
+        gallery: ["UniversalMayhem.png", "UniversalMayhem1.png", "UniversalMayhem2.png", "UniversalMayhem3.png", "UniversalMayhem4.png", "UniversalMayhem5.png"],
+        meta: [
+            { label: "Développeur", value: "Solo" },
+            { label: "Durée", value: "En développement" },
+            { label: "Joueurs", value: "1" }
+        ],
+        overview: "Universal Mayhem est un hybride auto-battler / tower-defense développé en solo sur Unity en C#, toujours en développement. Deux camps s'affrontent sur une carte comportant des points de capture neutres et des châteaux à défendre : les unités se déplacent, ciblent et combattent seules, le joueur agissant surtout avant la bataille en composant son deck et en faisant évoluer ses unités. Le jeu s'accompagne d'une couche complète de méta-progression avec gacha et collection, ainsi que d'une bande originale entièrement composée par mes soins.",
+        features: [
+            "Système de compétences data-driven : Chaque capacité est assemblée dans l'éditeur à partir de briques Trigger/Condition/Effet réutilisables - environ 144 capacités pour 61 unités jouables, sans code additionnel.",
+            "Combat entièrement automatisé : Les unités se déplacent, ciblent et combattent seules autour des points de capture ; le joueur prépare la bataille en amont via son deck et sa progression.",
+            "Gacha, Bestiaire et personnalisation : Système d'invocation avec suivi de pity, codex des unités, et une teinte de couleur personnalisable qui se propage automatiquement aux shaders, VFX et projectiles."
+        ],
+        tags: ["3D", "C#", "Unity", "Solo"]
+    },
+    {
         slug: "long-live-the-ant-queen",
         title: "Long Live the Ant Queen",
         subtitle: "Menez votre colonie de fourmis à la conquête d'un jardin devenu hostile",
