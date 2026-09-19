@@ -1,258 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="../Portfolio/Main/index.css">
+    <title>Florian Cardoso — Portfolio</title>
+    <meta name="description" content="Portfolio de Florian Cardoso, développeur informatique option jeu vidéo.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="Main/index.css">
 </head>
 <body>
-    <header>
-        <img src="../Portfolio/Main/Photo_Profil.jpg" alt="Your Name" class="profile-pic">
-        <h1>Florian Cardoso</h1>
-        <p>Développeur Informatique Option Jeu Vidéo</p>
-    </header>
-    
-    <section id="A propos">
-        <h2>A propos</h2>
-        <p>Bonjour ! Je m'appelle Florian Cardoso et je suis un étudiant passionné par le développement de jeux vidéo.
-            J'adore créer des expériences immersives. J'apprends actuellement la conception de jeux, la programmation et la narration. 
-            J'aime expérimenter avec différents moteurs de jeu comme Unity et Unreal Engine, et je cherche constamment à améliorer mes compétences en codage et en conception. 
-            Mon objectif est de créer des jeux amusants et captivants qui rassemblent les joueurs.</p>
-    </section>
+    <div class="layout">
+        <aside class="sidebar">
+            <span class="hero-star">✦</span>
+            <span class="hero-star">✧</span>
+            <span class="hero-star">✦</span>
+            <span class="hero-star">✧</span>
 
-    <section id="skills">
-        <h2>Compétences et expertise</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <h3>Développement de jeux</h3>
-                <p>Maîtrise de Unity/Unreal Engine, avec un focus sur les mécaniques de gameplay et le level design.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Programmation</h3>
-                <p>Bases solides en C++, C# et modèles de développement de jeux.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Pédagogie par Projet</h3>
-                <p>Travail constant en équipe. Interdisciplinarité.</p>
-            </div>
-        </div>
-    </section>
-     
-    <section id="projects">
-        <h2>Projets</h2>
-        <div class="dropdown">
-            <button id="filterDropdown" class="dropdown-button">Filter Projects</button>
-            <div id="dropdownMenu" class="dropdown-content">
-                <input type="text" id="tagSearch" placeholder="Search tags...">
-                <div id="tagList">
-                    <div class="tag-item">2D</div>
-                    <div class="tag-item">3D</div>
-                    <div class="tag-item">Blueprint</div>
-                    <div class="tag-item">CSS</div>
-                    <div class="tag-item">C#</div>
-                    <div class="tag-item">C++</div>
-                    <div class="tag-item">Equipe</div>
-                    <div class="tag-item">FPS</div>
-                    <div class="tag-item">Gaming Campus</div> 
-                    <div class="tag-item">GDScript</div>
-                    <div class="tag-item">Godot</div>
-                    <div class="tag-item">HTML</div>
-                    <div class="tag-item">Interdisciplinaire</div>
-                    <div class="tag-item">JavaScript</div>
-                    <div class="tag-item">Local</div>
-                    <div class="tag-item">Mobile</div>
-                    <div class="tag-item">Projet Fictif</div>
-                    <div class="tag-item">Solo</div>
-                    <div class="tag-item">Unity</div>
-                    <div class="tag-item">Unreal Engine</div>
-                    <!-- Add more tags as needed -->
+            <div class="sidebar-profile">
+                <div class="profile-pic-wrap">
+                    <img src="Main/Photo_Profil.jpg" alt="Florian Cardoso" class="profile-pic">
+                </div>
+                <h1>Florian Cardoso</h1>
+                <p class="subtitle">Développeur Informatique Option Jeu Vidéo</p>
+                <div class="hero-badges">
+                    <span class="hero-badge">Unity</span>
+                    <span class="hero-badge">Unreal Engine</span>
+                    <span class="hero-badge">Godot</span>
+                    <span class="hero-badge">C# / C++</span>
                 </div>
             </div>
-        </div>
-        
-        <!-- Display selected tags -->
-        <div id="selectedTags"></div>        
 
-        <div class="projects-container">
-            <a href="../Portfolio/OrbitOps/OrbitOps.html" class="project-card" data-tags="Unity C# Gaming Campus 3D FPS Solo Projet Fictif">
-                <img src="../Portfolio/OrbitOps/Orbit_Ops.png" alt="Orbit Ops">
-                <div class="project-info">
-                    <h3>Orbit Ops</h3>
-                    <p>Défendez la ville contre les envahisseurs</p>
-                    <div class="project-tags">
-                        <span class="project-tag">3D</span>
-                        <span class="project-tag">C#</span>
-                        <span class="project-tag">FPS</span>
-                        <span class="project-tag">Gaming Campus</span>
-                        <span class="project-tag">Projet Fictif</span>
-                        <span class="project-tag">Solo</span>
-                        <span class="project-tag">Unity</span>                        
-                    </div>
-                </div>
-            </a>
-            <a href="../Portfolio/Ski/Ski.html" class="project-card" data-tags="Unreal Engine Blueprint  Gaming Campus 3D Equipe">
-                <img src="../Portfolio/Ski/SkiGame.png" alt="Ski game">
-                <div class="project-info">
-                    <h3>Snowboard Game</h3>
-                    <p>Finissez la course le plus rapidement possible</p>
-                    <div class="project-tags">
-                        <span class="project-tag">3D</span>
-                        <span class="project-tag">Blueprint</span>
-                        <span class="project-tag">Equipe</span>
-                        <span class="project-tag">Gaming Campus</span>
-                        <span class="project-tag">Unreal Engine</span>                        
-                    </div>
-                </div>
-            </a>
-            <a href="../Portfolio/Football/Football.html" class="project-card" data-tags="Unity C# 3D  Gaming Campus Equipe Local">
-                <img src="../Portfolio/Football/Football.png" alt="Football Game">
-                <div class="project-info">
-                    <h3>Football Game</h3>
-                    <p>Affrontez vos amis dans une partie de football</p>
-                    <div class="project-tags">
-                        <span class="project-tag">3D</span>
-                        <span class="project-tag">C#</span>
-                        <span class="project-tag">Equipe</span>
-                        <span class="project-tag">Gaming Campus</span>
-                        <span class="project-tag">Local</span>
-                        <span class="project-tag">Unity</span>                        
-                    </div>
-                </div>
-            </a>
-            <a href="../Portfolio/RailShooter/RailShooter.html" class="project-card" data-tags="GDScript Godot Gaming Campus 2D Equipe Local Interdisciplinaire">
-                <img src="../Portfolio/RailShooter/RailShooter.png" alt="RailShooter">
-                <div class="project-info">
-                    <h3>DreamStrike</h3>
-                    <p>Un Rail Shooter dans un monde onirique</p>
-                    <div class="project-tags">
-                        <span class="project-tag">2D</span>
-                        <span class="project-tag">Equipe</span>
-                        <span class="project-tag">Gaming Campus</span>
-                        <span class="project-tag">GDScript</span>
-                        <span class="project-tag">Godot</span> 
-                        <span class="project-tag">Interdisciplinaire</span>
-                        <span class="project-tag">Local</span>  
-                    </div>
-                </div>
-            </a>
-            <a href="../Portfolio/EndlessWar/EndlessWar.html" class="project-card" data-tags="Unity C# Gaming Campus 3D Equipe Interdisciplinaire Mobile">
-                <img src="../Portfolio/EndlessWar/EndlessWar.png" alt="RailShooter">
-                <div class="project-info">
-                    <h3>Endless War</h3>
-                    <p>Plongez dans un monde fantasy épique où chaque partie forge votre légende</p>
-                    <div class="project-tags">
-                        <span class="project-tag">3D</span>
-                        <span class="project-tag">C#</span>
-                        <span class="project-tag">Equipe</span>
-                        <span class="project-tag">Gaming Campus</span>
-                        <span class="project-tag">Interdisciplinaire</span>
-                        <span class="project-tag">Mobile</span>
-                        <span class="project-tag">Unity</span>                        
-                    </div>
-                </div>
-            </a>
-            <a href="../Portfolio/Image-Portfolio/Image-Portfolio.html" class="project-card" data-tags="CSS HTML JavaScript Projet Fictif Solo">
-                <img src="../Portfolio/Image-Portfolio/Image-Portfolio.png" alt="Image-Portfolio">
-                <div class="project-info">
-                    <h3>Image Portfolio</h3>
-                    <p>Stockez vos images avec un système de tri par tags</p>
-                    <div class="project-tags">
-                        <span class="project-tag">CSS</span>
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">Projet Fictif</span>     
-                        <span class="project-tag">Solo</span>                        
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
+            <nav class="sidebar-nav">
+                <a href="#about" data-section="about">À propos</a>
+                <a href="#skills" data-section="skills">Compétences</a>
+                <a href="#projects" data-section="projects">Projets</a>
+                <a href="#contact" data-section="contact">Contact</a>
+            </nav>
 
-    <footer>
-        <p>Contact: florian.cardoso28@gmail.com</p>
-        <p>Téléphone: 07 83 57 46 61</p>
-    </footer>
+            <div class="sidebar-actions">
+                <a href="Main/CV_Florian_Cardoso.pdf" class="btn btn-primary" download>⬇ Télécharger mon CV</a>
+            </div>
+        </aside>
 
+        <main class="main-content">
+            <section id="about">
+                <h2>A propos</h2>
+                <p>Bonjour ! Je m'appelle Florian Cardoso et je suis un étudiant passionné par le développement de jeux vidéo.
+                    J'adore créer des expériences immersives. J'apprends actuellement la conception de jeux, la programmation et la narration.
+                    J'aime expérimenter avec différents moteurs de jeu comme Unity et Unreal Engine, et je cherche constamment à améliorer mes compétences en codage et en conception.
+                    Mon objectif est de créer des jeux amusants et captivants qui rassemblent les joueurs.</p>
+            </section>
+
+            <section id="skills">
+                <h2>Compétences et expertise</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <div class="skill-icon">🎮</div>
+                        <h3>Développement de jeux</h3>
+                        <p>Maîtrise de Unity/Unreal Engine, avec un focus sur les mécaniques de gameplay et le level design.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">💻</div>
+                        <h3>Programmation</h3>
+                        <p>Bases solides en C++, C# et modèles de développement de jeux.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🤝</div>
+                        <h3>Pédagogie par Projet</h3>
+                        <p>Travail constant en équipe. Interdisciplinarité.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projets</h2>
+
+                <div class="filter-panel">
+                    <div class="filter-panel-top">
+                        <button id="filterToggle" class="filter-toggle" type="button" aria-expanded="false" aria-controls="filterBody">
+                            <span>🔍 Filtrer par tag</span>
+                            <span id="filterCount" class="filter-count" hidden>0</span>
+                            <span class="filter-chevron">▾</span>
+                        </button>
+                        <button id="resetFilters" class="filter-reset" type="button" hidden>Réinitialiser</button>
+                    </div>
+
+                    <div id="filterBody" class="filter-body">
+                        <input type="text" id="tagSearch" class="filter-search" placeholder="Rechercher un tag...">
+
+                        <div class="filter-groups">
+                            <div class="filter-group">
+                                <h4>Moteur</h4>
+                                <div class="filter-chips">
+                                    <button type="button" class="tag-item" data-tag="Unity">Unity</button>
+                                    <button type="button" class="tag-item" data-tag="Unreal Engine">Unreal Engine</button>
+                                    <button type="button" class="tag-item" data-tag="Godot">Godot</button>
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <h4>Langage</h4>
+                                <div class="filter-chips">
+                                    <button type="button" class="tag-item" data-tag="C#">C#</button>
+                                    <button type="button" class="tag-item" data-tag="C++">C++</button>
+                                    <button type="button" class="tag-item" data-tag="Blueprint">Blueprint</button>
+                                    <button type="button" class="tag-item" data-tag="GDScript">GDScript</button>
+                                    <button type="button" class="tag-item" data-tag="HTML">HTML</button>
+                                    <button type="button" class="tag-item" data-tag="CSS">CSS</button>
+                                    <button type="button" class="tag-item" data-tag="JavaScript">JavaScript</button>
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <h4>Type de jeu</h4>
+                                <div class="filter-chips">
+                                    <button type="button" class="tag-item" data-tag="2D">2D</button>
+                                    <button type="button" class="tag-item" data-tag="3D">3D</button>
+                                    <button type="button" class="tag-item" data-tag="FPS">FPS</button>
+                                    <button type="button" class="tag-item" data-tag="Mobile">Mobile</button>
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <h4>Contexte</h4>
+                                <div class="filter-chips">
+                                    <button type="button" class="tag-item" data-tag="Solo">Solo</button>
+                                    <button type="button" class="tag-item" data-tag="Equipe">Equipe</button>
+                                    <button type="button" class="tag-item" data-tag="Local">Local</button>
+                                    <button type="button" class="tag-item" data-tag="Interdisciplinaire">Interdisciplinaire</button>
+                                    <button type="button" class="tag-item" data-tag="Gaming Campus">Gaming Campus</button>
+                                    <button type="button" class="tag-item" data-tag="Projet Fictif">Projet Fictif</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-container" id="projectsGrid"></div>
+            </section>
+
+            <footer id="contact">
+                <div class="footer-links">
+                    <a href="mailto:florian.cardoso28@gmail.com">✉ florian.cardoso28@gmail.com</a>
+                    <a href="tel:+33783574661">☎ 07 83 57 46 61</a>
+                </div>
+                <p class="footer-note">✦ Florian Cardoso — Développeur Jeu Vidéo</p>
+            </footer>
+        </main>
+    </div>
+
+    <button id="backToTop" type="button" aria-label="Retour en haut">↑</button>
+
+    <script src="Main/projects-data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const dropdownButton = document.getElementById("filterDropdown");
-            const dropdownMenu = document.getElementById("dropdownMenu");
-            const searchInput = document.getElementById("tagSearch");
-            const tagItems = document.querySelectorAll(".tag-item");
-            const selectedTagsContainer = document.getElementById("selectedTags");
-            let selectedTags = [];
-        
-            // Toggle dropdown visibility
-            dropdownButton.addEventListener("click", function (event) {
-                dropdownMenu.classList.toggle("show");
-                event.stopPropagation(); // Prevents immediate closing when clicking the button
+            // Generate project cards from the shared project data
+            const grid = document.getElementById("projectsGrid");
+            PROJECTS.forEach(function (project) {
+                const card = document.createElement("a");
+                card.href = "project.html?slug=" + project.slug;
+                card.className = "project-card";
+                card.innerHTML =
+                    '<img src="' + project.folder + '/' + project.cover + '" alt="' + project.title + '">' +
+                    '<div class="project-info">' +
+                        '<h3>' + project.title + '</h3>' +
+                        '<p>' + project.subtitle + '</p>' +
+                        '<div class="project-tags">' +
+                            project.tags.map(function (tag) { return '<span class="project-tag">' + tag + '</span>'; }).join('') +
+                        '</div>' +
+                    '</div>';
+                grid.appendChild(card);
             });
-        
-            // Close dropdown when clicking outside
-            document.addEventListener("click", function (event) {
-                if (!dropdownMenu.contains(event.target) && event.target !== dropdownButton) {
-                    dropdownMenu.classList.remove("show");
+
+            // Reveal sections on scroll
+            const revealTargets = document.querySelectorAll("section");
+            const revealObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            revealTargets.forEach(function (el) { revealObserver.observe(el); });
+
+            // Highlight the sidebar nav link matching the section in view
+            const navLinks = document.querySelectorAll(".sidebar-nav a");
+            const trackedSections = ["about", "skills", "projects", "contact"]
+                .map(function (id) { return document.getElementById(id); })
+                .filter(Boolean);
+            const navObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(function (link) {
+                            link.classList.toggle("active", link.dataset.section === entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: "-40% 0px -50% 0px" });
+            trackedSections.forEach(function (el) { navObserver.observe(el); });
+
+            // Back to top button
+            const backToTop = document.getElementById("backToTop");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 400) {
+                    backToTop.classList.add("show");
+                } else {
+                    backToTop.classList.remove("show");
                 }
             });
-        
-            // Prevent closing when interacting with the dropdown
-            dropdownMenu.addEventListener("click", function (event) {
-                event.stopPropagation();
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
-        
-            // Filter dropdown items based on search input
+
+            // Project tag filtering
+            const filterToggle = document.getElementById("filterToggle");
+            const filterBody = document.getElementById("filterBody");
+            const filterCount = document.getElementById("filterCount");
+            const resetFilters = document.getElementById("resetFilters");
+            const searchInput = document.getElementById("tagSearch");
+            const tagButtons = document.querySelectorAll(".tag-item");
+            const filterGroups = document.querySelectorAll(".filter-group");
+            let selectedTags = [];
+
+            // Toggle the filter panel open/closed
+            filterToggle.addEventListener("click", function () {
+                const isOpen = filterBody.classList.toggle("open");
+                filterToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+
+            // Filter chips based on search input
             searchInput.addEventListener("input", function () {
                 const query = searchInput.value.toLowerCase();
-                tagItems.forEach(item => {
-                    const tagText = item.textContent.toLowerCase();
-                    item.style.display = tagText.includes(query) ? "block" : "none";
+                filterGroups.forEach(function (group) {
+                    const chips = group.querySelectorAll(".tag-item");
+                    let anyVisible = false;
+                    chips.forEach(function (chip) {
+                        const match = chip.textContent.toLowerCase().includes(query);
+                        chip.classList.toggle("hidden-by-search", !match);
+                        if (match) anyVisible = true;
+                    });
+                    group.classList.toggle("hidden-by-search", !anyVisible);
                 });
             });
-        
+
             // Handle tag selection
-            tagItems.forEach(item => {
-                item.addEventListener("click", function () {
-                    const tag = item.textContent;
-                    if (!selectedTags.includes(tag)) {
+            tagButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const tag = button.dataset.tag;
+                    button.classList.toggle("active");
+                    if (selectedTags.includes(tag)) {
+                        selectedTags = selectedTags.filter(function (t) { return t !== tag; });
+                    } else {
                         selectedTags.push(tag);
-                        updateSelectedTags();
                     }
+                    updateFilterCount();
                     filterProjects();
                 });
             });
-        
-            // Update selected tags display
-            function updateSelectedTags() {
-                selectedTagsContainer.innerHTML = "";
-                selectedTags.forEach(tag => {
-                    const tagElement = document.createElement("span");
-                    tagElement.classList.add("selected-tag");
-                    tagElement.textContent = tag;
-        
-                    // Remove tag when clicked
-                    tagElement.addEventListener("click", function () {
-                        selectedTags = selectedTags.filter(t => t !== tag);
-                        updateSelectedTags();
-                        filterProjects();
-                    });
-        
-                    selectedTagsContainer.appendChild(tagElement);
-                });
+
+            resetFilters.addEventListener("click", function () {
+                selectedTags = [];
+                tagButtons.forEach(function (button) { button.classList.remove("active"); });
+                updateFilterCount();
+                filterProjects();
+            });
+
+            // Update the badge showing how many tags are active
+            function updateFilterCount() {
+                const count = selectedTags.length;
+                filterCount.hidden = count === 0;
+                filterCount.textContent = count;
+                resetFilters.hidden = count === 0;
             }
-        
+
             // Filter projects based on selected tags
             function filterProjects() {
-                document.querySelectorAll(".project-card").forEach(card => {
+                document.querySelectorAll(".project-card").forEach(function (card) {
                     const projectTags = Array.from(card.querySelectorAll(".project-tag"))
-                        .map(tag => tag.textContent);
-        
+                        .map(function (tag) { return tag.textContent; });
+
                     // Show the project if it matches all selected tags
-                    const matches = selectedTags.every(tag => projectTags.includes(tag));
-                    card.style.display = matches || selectedTags.length === 0 ? "block" : "none";
+                    const matches = selectedTags.every(function (tag) { return projectTags.includes(tag); });
+                    card.style.display = matches || selectedTags.length === 0 ? "" : "none";
                 });
             }
-        });        
+        });
     </script>
 </body>
 </html>

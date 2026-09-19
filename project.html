@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet — Florian Cardoso</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="Main/project.css">
+</head>
+<body>
+    <a href="index.html" class="back-button">← Retour au Portfolio</a>
+
+    <div id="projectRoot">
+        <header class="project-hero" id="projectHero">
+            <div class="project-hero-overlay">
+                <h1 id="projectTitle"></h1>
+                <p class="subtitle" id="projectSubtitle"></p>
+                <div class="project-tags" id="projectTagsList"></div>
+            </div>
+        </header>
+
+        <div class="project-layout">
+            <aside class="project-side">
+                <div class="project-meta" id="projectMeta"></div>
+            </aside>
+
+            <main class="project-main">
+                <div class="project-carousel">
+                    <div class="carousel-viewport">
+                        <img id="carouselImage" class="carousel-image" alt="">
+                        <button type="button" class="carousel-arrow prev" id="carouselPrev" aria-label="Image précédente">&#10094;</button>
+                        <button type="button" class="carousel-arrow next" id="carouselNext" aria-label="Image suivante">&#10095;</button>
+                    </div>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+
+                <section class="project-overview">
+                    <h2>Aperçu</h2>
+                    <p id="projectOverview"></p>
+                </section>
+
+                <section class="project-features">
+                    <h2>Points clés</h2>
+                    <ul id="projectFeatures"></ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="clickOutside(event)">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <button type="button" class="prev" onclick="event.stopPropagation(); goTo(currentIndex - 1)">&#10094;</button>
+        <button type="button" class="next" onclick="event.stopPropagation(); goTo(currentIndex + 1)">&#10095;</button>
+    </div>
+
+    <script src="Main/projects-data.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const project = PROJECTS.find(p => p.slug === params.get("slug"));
+
+        let images = [];
+        let currentIndex = 0;
+        let autoplayTimer = null;
+
+        if (!project) {
+            document.getElementById("projectRoot").innerHTML =
+                "<p style=\"padding:60px 20px;text-align:center;\">Projet introuvable. <a href=\"index.html\">Retour au portfolio</a></p>";
+        } else {
+            document.title = project.title + " — Florian Cardoso";
+            document.getElementById("projectTitle").textContent = project.title;
+            document.getElementById("projectSubtitle").textContent = project.subtitle;
+
+            images = project.gallery.map(function (fileName) { return project.folder + "/" + fileName; });
+            document.getElementById("projectHero").style.backgroundImage =
+                "url(" + images[0] + ")";
+
+            const tagsContainer = document.getElementById("projectTagsList");
+            project.tags.forEach(function (tag) {
+                const span = document.createElement("span");
+                span.className = "tag";
+                span.textContent = tag;
+                tagsContainer.appendChild(span);
+            });
+
+            const metaContainer = document.getElementById("projectMeta");
+            project.meta.forEach(function (item) {
+                const wrap = document.createElement("div");
+                const h3 = document.createElement("h3");
+                h3.textContent = item.label;
+                const p = document.createElement("p");
+                if (item.link) {
+                    const a = document.createElement("a");
+                    a.href = item.link;
+                    a.target = "_blank";
+                    a.rel = "noopener";
+                    a.textContent = item.value;
+                    p.appendChild(a);
+                } else {
+                    p.textContent = item.value;
+                }
+                wrap.appendChild(h3);
+                wrap.appendChild(p);
+                metaContainer.appendChild(wrap);
+            });
+
+            document.getElementById("projectOverview").textContent = project.overview;
+
+            const featuresList = document.getElementById("projectFeatures");
+            project.features.forEach(function (feature) {
+                const li = document.createElement("li");
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+
+            // Build the carousel dots
+            const dotsContainer = document.getElementById("carouselDots");
+            images.forEach(function (_, i) {
+                const dot = document.createElement("button");
+                dot.type = "button";
+                dot.className = "carousel-dot";
+                dot.setAttribute("aria-label", "Aller à l'image " + (i + 1));
+                dot.addEventListener("click", function () { goTo(i); });
+                dotsContainer.appendChild(dot);
+            });
+
+            document.getElementById("carouselImage").addEventListener("click", openModal);
+            document.getElementById("carouselPrev").addEventListener("click", function () { goTo(currentIndex - 1); });
+            document.getElementById("carouselNext").addEventListener("click", function () { goTo(currentIndex + 1); });
+
+            renderCarousel();
+            resetAutoplay();
+
+            const viewport = document.querySelector(".carousel-viewport");
+            viewport.addEventListener("mouseenter", function () { clearInterval(autoplayTimer); });
+            viewport.addEventListener("mouseleave", resetAutoplay);
+        }
+
+        function renderCarousel() {
+            document.getElementById("carouselImage").src = images[currentIndex];
+            document.querySelectorAll(".carousel-dot").forEach(function (dot, i) {
+                dot.classList.toggle("active", i === currentIndex);
+            });
+            const modal = document.getElementById("imageModal");
+            if (modal.classList.contains("show")) {
+                document.getElementById("modalImg").src = images[currentIndex];
+            }
+        }
+
+        function goTo(index) {
+            currentIndex = (index + images.length) % images.length;
+            renderCarousel();
+            resetAutoplay();
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayTimer);
+            if (images.length > 1) {
+                autoplayTimer = setInterval(function () { goTo(currentIndex + 1); }, 4500);
+            }
+        }
+
+        function openModal() {
+            const modal = document.getElementById("imageModal");
+            modal.classList.add("show");
+            document.getElementById("modalImg").src = images[currentIndex];
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").classList.remove("show");
+        }
+
+        function clickOutside(event) {
+            const modalImg = document.getElementById("modalImg");
+            if (event.target !== modalImg) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
