@@ -31,11 +31,11 @@ const PROJECTS = [
         cover: "LongLiveTheAntQueen.png",
         gallery: ["LongLiveTheAntQueen.png", "LongLiveTheAntQueen1.png", "LongLiveTheAntQueen2.png", "LongLiveTheAntQueen3.png", "LongLiveTheAntQueen4.png"],
         meta: [
-            { label: "Étudiants", value: "4 étudiants (5 au départ)" },
+            { label: "Étudiants", value: "4 étudiants" },
             { label: "Durée", value: "9 mois (projet fil rouge)" },
             { label: "Joueurs", value: "1" }
         ],
-        overview: "Long Live the Ant Queen est le projet fil rouge de ma quatrième année au Gaming Campus : un jeu de stratégie développé sur Unreal Engine 5 en C++ et Blueprints tout au long de l'année avec trois de mes camarades (l'équipe comptait cinq membres au début du projet). Vous y commandez une colonie de fourmis à la façon d'un RTS : cliquez sur une destination ou un élément du décor pour que vos fourmis s'y déplacent et effectuent l'action correspondante, afin d'explorer un jardin devenu un monde miniature hostile.",
+        overview: "Long Live the Ant Queen est le projet fil rouge de ma quatrième année au Gaming Campus : un jeu de stratégie développé sur Unreal Engine 5 en C++ et Blueprints tout au long de l'année avec trois de mes camarades. Vous y commandez une colonie de fourmis à la façon d'un RTS : cliquez sur une destination ou un élément du décor pour que vos fourmis s'y déplacent et effectuent l'action correspondante, afin d'explorer un jardin devenu un monde miniature hostile.",
         features: [
             "Contrôle façon RTS : Cliquez sur une destination pour donner un ordre à vos fourmis, qui s'y déplacent aussitôt.",
             "Actions contextuelles : Selon l'élément ciblé par le clic, vos fourmis effectuent l'action adaptée - déplacer un bloc, brûler un mur, et bien d'autres.",
